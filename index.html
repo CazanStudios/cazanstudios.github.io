@@ -5,43 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cazan Studios</title>
     <style>
+        /* ESTILOS GENERALES */
         body {
-            background-color: #1a1a1a;
+            background-color: #121212; /* Fondo oscuro estilo gamer */
             color: #ffffff;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            padding: 50px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        h1 { color: #ff9900; }
-        .button {
-            background-color: #ff9900;
-            color: black;
-            padding: 15px 32px;
+
+        /* ANIMACIÓN DE APARICIÓN SUAVE */
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ANIMACIÓN DE FLOTAR (Para el logo del juego) */
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* LOGO EMPRESA */
+        .logo-empresa {
+            width: 120px; /* Tamaño del logo empresa */
+            margin-bottom: 20px;
+            animation: aparecer 1.5s ease-out;
+        }
+
+        /* LOGO JUEGO */
+        .logo-juego {
+            width: 300px; /* Tamaño del logo juego (más grande) */
+            max-width: 90%; /* Para que no se salga en celulares */
+            margin: 20px 0;
+            animation: flotar 3s ease-in-out infinite; /* Flota infinitamente */
+            filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.5)); /* Resplandor naranja */
+        }
+
+        h1 { font-size: 2rem; margin-bottom: 10px; color: #ff9900; animation: aparecer 2s ease-out; }
+        p { color: #aaaaaa; margin-bottom: 30px; animation: aparecer 2.5s ease-out; }
+
+        /* BOTÓN DE DESCARGA */
+        .boton {
+            background: linear-gradient(45deg, #ff9900, #ff5e00);
+            color: white;
+            padding: 15px 40px;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 8px;
+            font-size: 18px;
+            border-radius: 50px;
             font-weight: bold;
-            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 100, 0, 0.4);
+            transition: transform 0.2s;
+            animation: aparecer 3s ease-out;
         }
-        .footer { margin-top: 50px; font-size: 12px; color: #888; }
+
+        .boton:hover {
+            transform: scale(1.05); /* Efecto al pasar el mouse */
+            background: linear-gradient(45deg, #ff5e00, #ff9900);
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 12px;
+            color: #555;
+            animation: aparecer 4s ease-out;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Bienvenido a Cazan Studios</h1>
-    <p>Desarrolladores de videojuegos independientes.</p>
-    
-    <hr style="width:50%; margin: auto; border-color: #333;">
-    
-    <h2>Nuestro Juego: Tavern Cat</h2>
-    <p>¡Ayuda al gato a detener a los ratones en esta aventura!</p>
-    
-    <a href="https://play.google.com/store/apps/details?id=com.cazanstudios.taverncat" class="button">Descargar en Google Play</a>
+    <img src="logo-empresa.png" alt="Cazan Studios Logo" class="logo-empresa">
+
+    <h1>Cazan Studios</h1>
+    <p>Creamos mundos, pixel a pixel.</p>
+
+    <a href="https://play.google.com/store/apps/details?id=com.cazanstudios.taverncat">
+        <img src="logo-juego.png" alt="Tavern Cat Logo" class="logo-juego">
+    </a>
+
+    <p>¡Nuestra última aventura ya está disponible!</p>
+
+    <a href="https://play.google.com/store/apps/details?id=com.cazanstudios.taverncat" class="boton">
+        Jugar Ahora 🎮
+    </a>
 
     <div class="footer">
-        <p>&copy; 2026 Cazan Studios. Todos los derechos reservados.</p>
-        <p>Contacto: cazanstudios@gmail.com</p>
+        <p>&copy; 2026 Cazan Studios. <br> Contacto: cazanstudios@gmail.com</p>
     </div>
 
 </body>
